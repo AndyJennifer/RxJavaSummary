@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * Author:  andy.xwt
  * Date:    2019/1/31 12:19
- * Description:
+ * Description: 通用Integer类型观察者
  */
 
 

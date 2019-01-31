@@ -47,6 +47,11 @@ class IntervalOperator {
     }
 
     private static void testIntervalRange() {
+        //第一个参数：开始数
+        //第二个参数：事件个数
+        //第三个参数：第一个事件延迟时间
+        //第四个参数：后续事件发送时间间隔
+        //第五个参数：时间间隔
         Observable<Long> longObservable = Observable.intervalRange(10, 20, 0, 1, TimeUnit.SECONDS);
         longObservable.subscribe(new Consumer<Long>() {
             @Override

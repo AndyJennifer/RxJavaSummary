@@ -33,7 +33,7 @@ class CreateOperator {
                 }
             }
 
-        }).subscribe(new ComonObserver());
+        }).subscribe(new CommonObserver());
     }
 
     public static void main(String[] args) {

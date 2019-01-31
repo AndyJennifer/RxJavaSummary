@@ -27,8 +27,9 @@ class DeferOperator {
 
         System.out.println("订阅之间i的值---->" + i);
 
+        //打印订阅后改变的值
         i = 10;
-        defer.subscribe(new ComonObserver());
+        defer.subscribe(new CommonObserver());
     }
 
     public static void main(String[] args) {

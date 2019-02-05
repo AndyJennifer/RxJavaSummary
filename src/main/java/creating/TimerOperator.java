@@ -14,7 +14,7 @@ import io.reactivex.functions.Consumer;
 public class TimerOperator {
 
     static void test() {
-        //一个参数延迟时间，第二个参数单位
+        //一个参数延迟时间，第二个时间单位
         Observable<Long> timer = Observable.timer(1, TimeUnit.SECONDS);
         timer.subscribe(new Consumer<Long>() {
             @Override

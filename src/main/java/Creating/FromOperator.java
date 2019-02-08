@@ -1,4 +1,4 @@
-package creating;
+package Creating;
 
 import java.util.Arrays;
 import java.util.List;

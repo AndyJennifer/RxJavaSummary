@@ -16,6 +16,7 @@ public class FilterOperator {
         Observable.range(1, 20).filter(new Predicate<Integer>() {
             @Override
             public boolean test(Integer integer) throws Exception {
+                //true表示不过滤。false表示过滤掉
                 return integer >= 5;
             }
         }).subscribe(new CommonObserver());

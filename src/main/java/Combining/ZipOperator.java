@@ -17,7 +17,7 @@ public class ZipOperator {
     static void test() {
         Observable.zip(
                 Observable.intervalRange(1, 5, 0, 1, TimeUnit.SECONDS)
-                , Observable.intervalRange(5, 6, 0, 1, TimeUnit.SECONDS)
+                , Observable.intervalRange(5, 6, 0, 2, TimeUnit.SECONDS)
                 , new BiFunction<Long, Long, String>() {
                     @Override
                     public String apply(Long aLong, Long aLong2) throws Exception {

@@ -3,8 +3,8 @@ package Combining;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function3;
 
 /**
  * Author:  andy.xwt
@@ -18,10 +18,11 @@ public class ZipOperator {
         Observable.zip(
                 Observable.intervalRange(1, 5, 0, 1, TimeUnit.SECONDS)
                 , Observable.intervalRange(5, 6, 0, 2, TimeUnit.SECONDS)
-                , new BiFunction<Long, Long, String>() {
+                , Observable.intervalRange(10, 2, 0, 3, TimeUnit.SECONDS)
+                , new Function3<Long, Long, Long, String>() {
                     @Override
-                    public String apply(Long aLong, Long aLong2) throws Exception {
-                        return aLong + "-->" + aLong2;
+                    public String apply(Long aLong, Long aLong2, Long aLong3) throws Exception {
+                        return aLong + "-->" + aLong2+"-->"+aLong3;
                     }
                 }).subscribe(new Consumer<String>() {
             @Override

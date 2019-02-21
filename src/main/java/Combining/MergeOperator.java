@@ -13,6 +13,11 @@ import io.reactivex.functions.Consumer;
 
 public class MergeOperator {
 
+    /**
+     * 第一个被观察者发送：12|34|5
+     * 第二个被观察着发送： 5| 6| 7| 8| 9
+     * 合并为：125 346 5 789
+     */
     static void testMerge() {
         Observable.merge(
                 Observable.intervalRange(1, 5, 0, 1, TimeUnit.SECONDS),

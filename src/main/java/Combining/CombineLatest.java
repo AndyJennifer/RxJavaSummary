@@ -9,7 +9,7 @@ import io.reactivex.functions.Consumer;
 /**
  * Author:  andy.xwt
  * Date:    2019-02-08 14:29
- * Description:combineLatest操作符将两个被观察者的发送时间按照最近发送的事件进行合并
+ * Description:combineLatest操作符将两个被观察者的发送时间按照最近发送的事件进行 合并!!!
  */
 
 public class CombineLatest {

@@ -7,6 +7,7 @@ import io.reactivex.Observable;
  * Author:  andy.xwt
  * Date:    2019-02-06 00:33
  * Description:concat操作符 将多个被观察者发送的事件组合起来
+ * 与{@link Combining.MergeOperator}的区别，是按照被观察者的顺序一个一个发送事件的。不会出现抢占的情况
  */
 
 public class ConcatOperator {

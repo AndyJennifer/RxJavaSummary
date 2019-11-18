@@ -1,6 +1,6 @@
 package Mathematical;
 
-import Creating.CommonObserver;
+import common.CommonObserver;
 import io.reactivex.Observable;
 
 /**

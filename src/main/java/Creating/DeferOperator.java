@@ -4,6 +4,7 @@ import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
+import common.CommonObserver;
 
 /**
  * Author:  andy.xwt

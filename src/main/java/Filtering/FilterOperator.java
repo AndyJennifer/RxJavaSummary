@@ -1,6 +1,6 @@
 package Filtering;
 
-import Creating.CommonObserver;
+import common.CommonObserver;
 import io.reactivex.Observable;
 import io.reactivex.functions.Predicate;
 

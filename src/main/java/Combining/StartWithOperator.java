@@ -1,6 +1,6 @@
 package Combining;
 
-import Creating.CommonObserver;
+import common.CommonObserver;
 import io.reactivex.Observable;
 
 /**

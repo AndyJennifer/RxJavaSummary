@@ -1,6 +1,6 @@
 package Utility;
 
-import Creating.CommonObserver;
+import common.CommonObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -9,7 +9,8 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Author:  andy.xwt
  * Date:    2019-03-10 23:41
- * Description:subscribeOn规定了被观察者发送事件的运行线程
+ * Description:subscribeOn 规定了被观察者发送事件的运行线程
+ * http://reactivex.io/documentation/operators/subscribeon.html
  */
 
 public class SubscribeOnOperator {

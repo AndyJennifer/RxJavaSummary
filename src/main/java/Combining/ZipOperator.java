@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function3;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -22,7 +23,7 @@ public class ZipOperator {
                 , new Function3<Long, Long, Long, String>() {
                     @Override
                     public String apply(Long aLong, Long aLong2, Long aLong3) throws Exception {
-                        return aLong + "-->" + aLong2+"-->"+aLong3;
+                        return aLong + "-->" + aLong2 + "-->" + aLong3;
                     }
                 }).subscribe(new Consumer<String>() {
             @Override
@@ -32,8 +33,8 @@ public class ZipOperator {
         });
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         test();
-        Thread.sleep(100000);//这里保证虚拟机不停止运行，
+        ThreadUtil.sleep();//这里保证虚拟机不停止运行
     }
 }

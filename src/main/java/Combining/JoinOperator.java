@@ -7,6 +7,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -17,8 +18,8 @@ import io.reactivex.functions.Function;
 public class JoinOperator {
 
     static void test() {
-        Observable<Long> observable1 = Observable.intervalRange(1, 5,0,1,TimeUnit.SECONDS);
-        Observable<Long> observable2 = Observable.intervalRange(6, 5,0,1,TimeUnit.SECONDS);
+        Observable<Long> observable1 = Observable.intervalRange(1, 5, 0, 1, TimeUnit.SECONDS);
+        Observable<Long> observable2 = Observable.intervalRange(6, 5, 0, 1, TimeUnit.SECONDS);
         observable1.join(observable2, new Function<Long, ObservableSource<Long>>() {
             @Override
             public ObservableSource<Long> apply(Long integer) throws Exception {
@@ -42,8 +43,9 @@ public class JoinOperator {
         });
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         test();
-        Thread.sleep(100000);//这里保证虚拟机不停止运行，
+        ThreadUtil.sleep();
+        ;//这里保证虚拟机不停止运行，
     }
 }

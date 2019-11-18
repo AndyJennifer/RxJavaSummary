@@ -12,4 +12,12 @@ public class ThreadUtil {
     public static String getThreadName() {
         return Thread.currentThread().getName();
     }
+
+    public static void sleep() {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

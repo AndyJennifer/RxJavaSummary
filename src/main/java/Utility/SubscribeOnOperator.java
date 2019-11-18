@@ -1,10 +1,11 @@
 package Utility;
 
-import common.CommonObserver;
+import Common.CommonObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.schedulers.Schedulers;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -15,7 +16,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class SubscribeOnOperator {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) {
@@ -31,6 +32,6 @@ public class SubscribeOnOperator {
                 .subscribeOn(Schedulers.newThread())//只有第一次有效，因为包装类的调用关系
                 .subscribeOn(Schedulers.io())
                 .subscribe(new CommonObserver());
-        Thread.sleep(1000);
+        ThreadUtil.sleep();
     }
 }

@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -32,6 +33,6 @@ public class MergeOperator {
 
     public static void main(String[] args) throws InterruptedException {
         testMerge();
-        Thread.sleep(100000);//这里保证虚拟机不停止运行，
+        ThreadUtil.sleep();;//这里保证虚拟机不停止运行，
     }
 }

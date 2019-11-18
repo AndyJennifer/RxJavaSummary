@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -37,8 +38,8 @@ public class CombineLatest {
         });
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         test();
-        Thread.sleep(100000);//这里保证虚拟机不停止运行，
+        ThreadUtil.sleep();//这里保证虚拟机不停止运行，
     }
 }

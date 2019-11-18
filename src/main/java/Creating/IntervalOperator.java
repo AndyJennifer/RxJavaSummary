@@ -6,6 +6,7 @@ import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -61,7 +62,7 @@ class IntervalOperator {
         });
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 //        testInterval();
         testIntervalRange();
 
@@ -71,6 +72,6 @@ class IntervalOperator {
          * Put in a long sleep just after the subscribe() call and you will see it working.
          *
          */
-        Thread.sleep(5000);//这里保证虚拟机不停止运行，
+        ThreadUtil.sleep();//这里保证虚拟机不停止运行，
     }
 }

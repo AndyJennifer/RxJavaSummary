@@ -6,6 +6,7 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Predicate;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -18,7 +19,7 @@ import io.reactivex.functions.Predicate;
 class TakeUntilOperator {
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
 //        takeUntilOne();
         takeUntilTwo();
     }
@@ -53,7 +54,7 @@ class TakeUntilOperator {
     /**
      * 在下面的例子中，observable1一直会发送事件，直到observable2发送事件时，observable1会停止发送事件
      */
-    private static void takeUntilTwo() throws InterruptedException {
+    private static void takeUntilTwo()  {
         Observable<Long> observable1 = Observable.interval(1, TimeUnit.SECONDS);
         Observable<String> observable2 = Observable.just("4").delay(3, TimeUnit.SECONDS);
         observable1.takeUntil(observable2)
@@ -73,7 +74,7 @@ class TakeUntilOperator {
                         System.out.println("complete");
                     }
                 });
-        Thread.sleep(5000);
+        ThreadUtil.sleep();
 
     }
 }

@@ -19,7 +19,7 @@ import util.ThreadUtil;
 class ObserverOnOperator {
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Observable
                 .create(new ObservableOnSubscribe<Integer>() {
                     @Override
@@ -48,7 +48,7 @@ class ObserverOnOperator {
                         System.out.println("第二次observeOn：" + ThreadUtil.getThreadName());
                     }
                 });
-        Thread.sleep(1000);
+        ThreadUtil.sleep();
     }
 
 }

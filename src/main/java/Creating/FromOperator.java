@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import io.reactivex.Observable;
-import common.CommonObserver;
+import Common.CommonObserver;
 
 /**
  * Author:  andy.xwt

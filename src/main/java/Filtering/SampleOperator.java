@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -25,8 +26,8 @@ public class SampleOperator {
                 });
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
         test();
-        Thread.sleep(50000);
+        ThreadUtil.sleep();//这里保证虚拟机不停止运行
     }
 }

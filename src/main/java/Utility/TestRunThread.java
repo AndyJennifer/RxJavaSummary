@@ -136,9 +136,9 @@ class TestRunThread {
     }
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 //        testNormalMethod();
         testDoOnMethod();
-        Thread.sleep(5000);
+        ThreadUtil.sleep();
     }
 }

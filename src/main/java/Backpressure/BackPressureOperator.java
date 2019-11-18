@@ -8,6 +8,7 @@ import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
 import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.schedulers.Schedulers;
+import util.ThreadUtil;
 
 /**
  * Author:  andy.xwt
@@ -188,11 +189,11 @@ public class BackPressureOperator {
         });
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
 //        flowableAsnycNormal();
 //        flowableSnycNormal();
 //        flowableSyncNotice();
 //        bufferOut();
-        Thread.sleep(1000);
+        ThreadUtil.sleep();
     }
 }

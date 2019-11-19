@@ -14,22 +14,22 @@ public class CommonObserver implements Observer<Integer> {
 
 
     public void onSubscribe(Disposable d) {
-        System.out.println("onSubscribe: --->");
+        System.out.println("---onSubscribe---");
     }
 
     @Override
     public void onNext(Integer integer) {
-        System.out.println("Next: " + integer);
+        System.out.println("onNext: " + integer);
     }
 
     @Override
     public void onError(Throwable error) {
-        System.err.println("Error: " + error.getMessage());
+        System.err.println("onError: " + error.getMessage());
     }
 
     @Override
     public void onComplete() {
-        System.out.println("Sequence complete.");
+        System.out.println("---onComplete---");
     }
 
 

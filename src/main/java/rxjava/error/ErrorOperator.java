@@ -84,8 +84,8 @@ class ErrorOperator {
     }
 
     public static void main(String[] args) {
-//        testErrorReturn();
+        testErrorReturn();
 //        testErrorResumeNext();
-        testOnExceptionResumeNext();
+//        testOnExceptionResumeNext();
     }
 }

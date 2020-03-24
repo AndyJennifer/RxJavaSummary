@@ -126,4 +126,16 @@ RxJavaSummary 是一个 RxJava2 实战项目。它涵盖了 RxJava2 中常用的
 [CompletableObservable.java]:https://github.com/AndyJennifer/RxJavaSummary/blob/master/src/main/java/rxjava/observables/CompletableObservable.java
 [MaybeObservable.java]:https://github.com/AndyJennifer/RxJavaSummary/blob/master/src/main/java/rxjava/observables/MaybeObservable.java
 [SingleObservable.java]:https://github.com/AndyJennifer/RxJavaSummary/blob/master/src/main/java/rxjava/observables/SingleObservable.java
+
+
+## 最后
+
+如果你觉得项目不错，欢迎点击 star ❤️或 follow，也可以帮忙分享给你更多的朋友。你的支持与鼓励是给我继续做好该项目的最大动力。
+
+## 联系我
+
+- QQ:443696320
+- 简书：[AndyandJennifer](https://www.jianshu.com/users/921c778fb5e1/timeline)
+- 掘金：[AndyandJennifer](https://juejin.im/user/5acc1ea06fb9a028bc2e0fc1)
+- Email: [andyjennifer@126.com](andyjennifer@126.com)
    

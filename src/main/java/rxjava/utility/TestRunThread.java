@@ -71,9 +71,9 @@ class TestRunThread {
 
     /**
      * 观察者中的doOnNext doOnError doOnComplete方法
-     * 如果在 observeOn 方法前执行，那么就运行在 onSubscribe 方法所指定的线程，如果onSubscribe方法没有指定，那么运行在所在线程中
+     * 如果在 observeOn 方法前执行，那么就运行在 subscribeOn 方法所指定的线程，如果subscribeOn 方法没有指定，那么运行在所在线程中
      * 如果在 observeOn 方法之后执行，那么就运行在 observeOn 方法所指定的线程
-     * 如果 observeOn 与 onSubscribe 都没有指定，那么运行在所在的线程中
+     * 如果 observeOn 与 subscribeOn 都没有指定，那么运行在所在的线程中
      */
     public static void testDoOnMethod() {
         new Thread() {

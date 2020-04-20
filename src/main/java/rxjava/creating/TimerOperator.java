@@ -15,7 +15,7 @@ import util.ThreadUtil;
 public class TimerOperator {
 
     static void test() {
-        //一个参数延迟时间，第二个时间单位
+        //第一个参数：延迟时间，第二个参数：时间单位
         Observable<Long> timer = Observable.timer(1, TimeUnit.SECONDS);
         timer.subscribe(new Consumer<Long>() {
             @Override

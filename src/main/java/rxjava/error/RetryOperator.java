@@ -1,6 +1,6 @@
 package rxjava.error;
 
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -18,6 +18,8 @@ import io.reactivex.functions.Predicate;
  * retry(Predicate<? super Throwable> predicate)：出现错误时，判断是否需要重新发送数据,
  * retry(BiPredicate<? super Integer, ? super Throwable> predicate)：第一个参数为重试的次数,基本与上一个方法一样。
  * retry(long times, Predicate<? super Throwable> predicate),带参数的重试
+ *
+ * @see <a href="https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Retry.html"/>
  */
 
 
@@ -34,7 +36,7 @@ class RetryOperator {
                 emitter.onNext(2);
                 emitter.onError(new Throwable("错误了"));
             }
-        }).retry().subscribe(new CommonObserver());
+        }).retry().subscribe(new CommonIntegerObserver());
     }
 
     /**
@@ -48,7 +50,7 @@ class RetryOperator {
                 emitter.onNext(2);
                 emitter.onError(new Throwable("错误了"));
             }
-        }).retry(2).subscribe(new CommonObserver());
+        }).retry(2).subscribe(new CommonIntegerObserver());
     }
 
 
@@ -69,7 +71,7 @@ class RetryOperator {
                 return throwable.getMessage().equals("错误了");
 
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     /**
@@ -89,7 +91,7 @@ class RetryOperator {
                 System.out.println("重试次数" + integer);
                 return throwable.getMessage().equals("错误了");
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     /**
@@ -108,7 +110,7 @@ class RetryOperator {
             public boolean test(Throwable throwable) throws Exception {
                 return throwable.getMessage().equals("错误了");
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     /**
@@ -131,14 +133,14 @@ class RetryOperator {
                     public ObservableSource<?> apply(Throwable throwable) throws Exception {
 //                        // 1. 若返回的Observable发送的事件 = Error事件，则原始的Observable不重新发送事件
 //                        // 该异常错误信息可在观察者中的onError（）中获得
-                        return Observable.error(new Throwable("retryWhen结束"));
+//                        return Observable.error(new Throwable("retryWhen结束"));
 //
 //                        //若返回的Observable发送的事件 = Next事件，则原始的Observable重新发送事件（若持续遇到错误，则持续重试
-////                        return Observable.just(3);
+                        return Observable.just(3);
                     }
                 });
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     public static void main(String[] args) {

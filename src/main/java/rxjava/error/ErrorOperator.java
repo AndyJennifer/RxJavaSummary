@@ -1,6 +1,6 @@
 package rxjava.error;
 
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -12,6 +12,7 @@ import io.reactivex.functions.Function;
  * Author:  andy.xwt
  * Date:    2019/2/11 10:06
  * Description:
+ * @see <a href="https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Catch.html"/>
  */
 
 
@@ -36,7 +37,7 @@ class ErrorOperator {
                 //当发生错误
                 return 123;
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     /**
@@ -48,21 +49,21 @@ class ErrorOperator {
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
                 emitter.onNext(1);
                 emitter.onNext(2);
-                emitter.onError(new RuntimeException("错误了"));
+                emitter.onError(new Exception("错误了"));
             }
         }).onErrorResumeNext(new Function<Throwable, ObservableSource<? extends Integer>>() {
             @Override
             public ObservableSource<? extends Integer> apply(Throwable throwable) throws Exception {
                 return Observable.range(3, 3);
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
 
-
     /**
-     * onExceptionResumeNext与onErrorResumeNext操作符类似，但是需要注意的是前者指接受Exception，
-     * 如果当前抛出Throwable错误，那么将不会产生新的被观察者，抛出的Throwable错误，任然会被观察者接受，且这个观察链将会结束
+     * 和onErrorResumeNext类似，onExceptionResumeNext方法返回一个镜像原有Observable行为的新Observable，
+     * 也使用一个备用的Observable，不同的是，
+     * 如果onError收到的Throwable不是一个Exception，它会将错误传递给观察者的onError方法，不会使用备用的Observable。
      */
     static void testOnExceptionResumeNext() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
@@ -70,6 +71,7 @@ class ErrorOperator {
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
                 emitter.onNext(1);
                 emitter.onNext(2);
+//                emitter.onError(new Error("错误了"));
                 emitter.onError(new Exception("错误了"));
             }
         }).onExceptionResumeNext(new Observable<Integer>() {
@@ -80,12 +82,12 @@ class ErrorOperator {
                 observer.onNext(5);
                 observer.onComplete();
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     public static void main(String[] args) {
-        testErrorReturn();
+//        testErrorReturn();
 //        testErrorResumeNext();
-//        testOnExceptionResumeNext();
+        testOnExceptionResumeNext();
     }
 }

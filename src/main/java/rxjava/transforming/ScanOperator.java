@@ -1,6 +1,6 @@
 package rxjava.transforming;
 
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 import io.reactivex.Observable;
 import io.reactivex.functions.BiFunction;
 
@@ -21,7 +21,7 @@ public class ScanOperator {
             public Integer apply(Integer integer, Integer integer2) throws Exception {
                 return integer + integer2;
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     public static void main(String[] args) {

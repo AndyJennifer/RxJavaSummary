@@ -1,6 +1,6 @@
 package rxjava.observables;
 
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 import io.reactivex.Completable;
 import io.reactivex.CompletableEmitter;
 import io.reactivex.CompletableOnSubscribe;
@@ -54,7 +54,7 @@ class CompletableObservable {
 //                .toFlowable()
 //                .toObservable()
                 .andThen(Observable.range(5, 10))
-                .subscribe(new CommonObserver());
+                .subscribe(new CommonIntegerObserver());
     }
 
     public static void main(String[] args) {

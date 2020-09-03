@@ -1,6 +1,6 @@
 package rxjava.filtering;
 
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 import io.reactivex.Observable;
 import io.reactivex.functions.Predicate;
 
@@ -19,7 +19,7 @@ public class FilterOperator {
                 //true表示不过滤。false表示过滤掉
                 return integer >= 5;
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     public static void main(String[] args) {

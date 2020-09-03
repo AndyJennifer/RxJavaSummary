@@ -10,7 +10,7 @@ import io.reactivex.disposables.Disposable;
  */
 
 
-public class CommonObserver implements Observer<Integer> {
+public class CommonIntegerObserver implements Observer<Integer> {
 
 
     public void onSubscribe(Disposable d) {

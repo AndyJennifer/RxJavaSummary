@@ -3,7 +3,7 @@ package rxjava.creating;
 import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 
 /**
  * Author:  andy.xwt
@@ -20,7 +20,7 @@ public class StartOperator {
             public Integer call() throws Exception {
                 return 1;
             }
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     public static void main(String[] args) {

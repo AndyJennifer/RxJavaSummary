@@ -1,6 +1,6 @@
 package rxjava.combining;
 
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -19,7 +19,7 @@ public class StartWithOperator {
     static void test() {
         Observable.range(1, 5)
                 .startWith(0)
-                .subscribe(new CommonObserver());
+                .subscribe(new CommonIntegerObserver());
     }
 
     /**
@@ -30,7 +30,7 @@ public class StartWithOperator {
         Observable.range(1, 5)
                 .startWith(0)
                 .startWith(-1)
-                .subscribe(new CommonObserver());
+                .subscribe(new CommonIntegerObserver());
     }
 
     /**
@@ -44,7 +44,7 @@ public class StartWithOperator {
                 emitter.onNext(1);
                 emitter.onNext(2);
             }
-        }).startWith(0).startWith(-1).subscribe(new CommonObserver());
+        }).startWith(0).startWith(-1).subscribe(new CommonIntegerObserver());
     }
 
     public static void main(String[] args) {

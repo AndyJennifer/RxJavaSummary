@@ -11,7 +11,10 @@ import io.reactivex.functions.Function;
 /**
  * Author:  andy.xwt
  * Date:    2019-02-04 23:51
- * Description:flatMap操作符会将被观察者发送的事件，拆分或者合并成新的事件并发送给观察者。
+ * Description:
+ * FlatMap操作符使用一个指定的函数对原始Observable发射的每一项数据执行变换操作，
+ * 这个函数返回一个本身也发射数据的Observable，然后FlatMap合并这些Observables发射的数据，
+ * 最后将合并后的结果当做它自己的数据序列发射。
  */
 
 public class FlatMapOperator {

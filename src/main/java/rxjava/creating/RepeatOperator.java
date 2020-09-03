@@ -10,6 +10,8 @@ import io.reactivex.functions.Consumer;
  * Description:
  * repeat:运算符允许重新发送一系列事件
  * repeatUntil:直到某个条件满足才停止发送
+ *
+ * @see <a href="https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Repeat.html"/>
  */
 
 

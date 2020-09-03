@@ -3,7 +3,7 @@ package rxjava.creating;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 
 /**
  * Author:  andy.xwt
@@ -15,6 +15,8 @@ import common.CommonObserver;
  * 编写这个函数，使其作为一个可观测的——通过适当地调用观察者的onNext、onError和onCompleted方法。
  * <p>
  * 格式良好的有限可观测对象必须尝试调用一次观察者的onComplete方法或其onerror方法，并且此后不得尝试调用观察者的任何其他方法。
+ *
+ * @see <a href="https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Create.html"/>
  */
 
 
@@ -34,7 +36,7 @@ class CreateOperator {
                 }
             }
 
-        }).subscribe(new CommonObserver());
+        }).subscribe(new CommonIntegerObserver());
     }
 
     public static void main(String[] args) {

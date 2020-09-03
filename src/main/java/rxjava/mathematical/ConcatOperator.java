@@ -1,7 +1,11 @@
 package rxjava.mathematical;
 
-import common.CommonObserver;
+import java.util.ArrayList;
+import java.util.List;
+
+import common.CommonIntegerObserver;
 import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
 
 /**
  * Author:  andy.xwt
@@ -15,25 +19,33 @@ public class ConcatOperator {
     //concat有个数限制
     static void testConcat() {
         Observable.concat(Observable.range(1, 5), Observable.range(5, 5))
-                .subscribe(new CommonObserver());
+                .subscribe(new CommonIntegerObserver());
     }
 
     //concatArray没有个数限制
     static void testConcatArray() {
-        Observable.concatArray(Observable.range(1, 5), Observable.range(5, 5))
-                .subscribe(new CommonObserver());
+        List<Observable<Integer>> list = new ArrayList<>();
+        list.add(Observable.range(1, 5));
+        list.add(Observable.range(5, 5));
+        Observable.concat(list)
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        System.out.println("---->"+integer);
+                    }
+                });
 
     }
     //delayError的作用是当整个事件流出现异常时，不会中断事件的传递，而是等到正常事件发送完毕后，才发送错误事件
     static void testConcatDelayError() {
         Observable.concatArrayDelayError(Observable.range(1, 5), Observable.error(new RuntimeException("rxjava/error")), Observable.range(5, 5))
-                .subscribe(new CommonObserver());
+                .subscribe(new CommonIntegerObserver());
 
     }
 
     public static void main(String[] args) {
-//        testConcat();
+        testConcat();
 //        testConcatArray();
-        testConcatDelayError();
+//        testConcatDelayError();
     }
 }

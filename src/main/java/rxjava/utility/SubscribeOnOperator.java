@@ -1,6 +1,6 @@
 package rxjava.utility;
 
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -31,7 +31,7 @@ public class SubscribeOnOperator {
         })
                 .subscribeOn(Schedulers.newThread())//只有第一次有效，因为包装类的调用关系
                 .subscribeOn(Schedulers.io())
-                .subscribe(new CommonObserver());
+                .subscribe(new CommonIntegerObserver());
         ThreadUtil.sleep();
     }
 }

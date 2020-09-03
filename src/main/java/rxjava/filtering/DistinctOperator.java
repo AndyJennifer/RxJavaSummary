@@ -6,7 +6,7 @@ import com.sun.prism.paint.Color;
 import java.util.Arrays;
 import java.util.List;
 
-import common.CommonObserver;
+import common.CommonIntegerObserver;
 import common.Shape;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -18,7 +18,7 @@ import io.reactivex.functions.Function;
  * Author:  andy.xwt
  * Date:    2019/11/28 19:07
  * Description:抑制（过滤掉）重复的数据项
- * https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Distinct.html
+ * @see <a href="https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Distinct.html"/>
  */
 
 
@@ -44,7 +44,7 @@ class DistinctOperator {
         //输出1，2，3
         Observable.just(1, 2, 1, 1, 2, 3)
                 .distinct()
-                .subscribe(new CommonObserver());
+                .subscribe(new CommonIntegerObserver());
 
     }
 

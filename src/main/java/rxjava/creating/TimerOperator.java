@@ -9,7 +9,8 @@ import util.ThreadUtil;
 /**
  * Author:  andy.xwt
  * Date:    2019-02-04 23:37
- * Description:Timer操作符将返回一个被观察者，且延时发送一个带0的消息
+ * Description:创建一个在给定的时间段之后返回一个特殊值的Observable。
+ * @see <a href="https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Timer.html"/>
  */
 
 public class TimerOperator {

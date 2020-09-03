@@ -11,9 +11,10 @@ import util.ThreadUtil;
 /**
  * Author:  andy.xwt
  * Date:    2019/1/31 14:37
- * Description:创建一个可观测的，它发出一个整数序列，按给定的时间间隔间隔隔开
+ * Description:创建一个可观测的，它发出一个整数序列，按给定的时间间隔隔开
+ *
+ * @see <a href="https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Interval.html"/>
  */
-
 
 class IntervalOperator {
 

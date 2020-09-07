@@ -18,7 +18,10 @@ import util.ThreadUtil;
 
 class ObserverOnOperator {
 
-
+    /**
+     * 若Observable.observeOn（）多次指定观察者 接收 & 响应事件的线程，
+     * 则每次指定均有效，即每指定一次，就会进行一次线程的切换
+     */
     public static void main(String[] args) {
         Observable
                 .create(new ObservableOnSubscribe<Integer>() {

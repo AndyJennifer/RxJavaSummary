@@ -10,7 +10,7 @@ import util.ThreadUtil;
 /**
  * Author:  andy.xwt
  * Date:    2019-02-08 14:14
- * Description:Zip操作符返回一个Obversable，它使用这个函数按顺序结合两个或多个Observables发射的数据项，
+ * Description:Zip操作符返回一个Observable，它使用这个函数按顺序结合两个或多个Observables发射的数据项，
  * 然后它发射这个函数返回的结果。它按照严格的顺序应用这个函数。它只发射与发射数据项最少的那个Observable一样多的数据。
  */
 

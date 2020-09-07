@@ -16,6 +16,9 @@ import util.ThreadUtil;
 
 public class SubscribeOnOperator {
 
+    /**
+     * 若Observable.subscribeOn（）多次指定被观察者 生产事件的线程，则只有第一次指定有效，其余的指定线程无效
+     */
     public static void main(String[] args) {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override

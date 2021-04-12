@@ -1,6 +1,6 @@
 package common;
 
-import com.sun.prism.paint.Color;
+import java.awt.Color;
 
 /**
  * Author:  andy.xwt
@@ -10,7 +10,7 @@ import com.sun.prism.paint.Color;
 
 
 public class Shape {
-    public  Color color;
+    public Color color;
     public String type;
 
     public Shape(Color color, String type) {

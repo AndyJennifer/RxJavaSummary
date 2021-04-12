@@ -1,8 +1,7 @@
 package rxjava.filtering;
 
 
-import com.sun.prism.paint.Color;
-
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.List;
 
